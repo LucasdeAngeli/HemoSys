@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0%;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .bg-img {
+      /* Imagem */
+      background-image: url("../Projeto/login-back.jpg");
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      /* Center and scale */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+    }
+
+    /* Box de Login */
+    .container {
+      position: relative;
+      left: 40%;
+      top: 20%;
+      display: flex;
+      flex-direction: column;
+      margin: 0px;
+      max-width: 300px;
+      padding: 16px;
+      background-color: rgb(97, 97, 97);
+      border-radius: 5px;
+      background-clip: border-box;
+      margin-bottom: 15px;
+      opacity: 0.7;
+    }
+
+    /* CSS Entrada de dados */
+    input[type=number],
+    input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=number]:focus,
+    input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* botoes */
+    .btn {
+      background-color: #fa2d2d;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      border-color: #fa2d2d;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: #fa2d2d;
+      outline: #fa2d2d;
+      border: .5px solid red;
+    }
+    h1{
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-img">
+    <form action="/action_page.php" class="container">
+      <h1>Login</h1>
+
+      <label for="CPF"><b>CPF</b></label>
+      <input type="number" name="CPF" pattern="(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})" inputmode="numeric" required>
+      <label for="psw"><b>Senha</b></label>
+      <input type="password" name="psw" required>
+      <button type="submit" class="btn">Acessar</button>
+      <br>
+      <a href="../projeto/cadastro.html" class="btn">Não é cadastrado? Clique Aqui</a>
+    </form>
+  </div>
+</body>
+</html>

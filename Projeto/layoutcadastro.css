@@ -1,0 +1,156 @@
+::after, ::before {
+    box-sizing: border-box;
+}
+form {
+    display: block;
+    margin-top: 0%;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-size-adjust: 100%;
+    border-radius:5px;
+    position: relative;
+}
+.select-sexo{
+    display: inline-block;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    position: relative;
+}
+.form-cadastro {
+    width: 600px;
+    display: block;
+    display: flex;
+      flex-direction: column;
+      margin: 0px;
+      padding: 16px;
+      background-color: rgb(97, 97, 97);
+      border-radius: 5px;
+      background-clip: border-box;
+      margin-bottom: 15px;
+      opacity: 1.0;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    background-color: rgb(83, 83, 83);
+    text-align: left;
+    position: relative;
+}
+.row {
+    border-radius: 5px;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    align-content: center;
+}
+p {
+    margin-top: 0;
+}
+address{
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+}
+label {
+    display: inline-block;
+    margin-bottom: label-margin-bottom;
+}
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+input, button, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+button, input {
+    overflow: visible;
+}
+
+select {
+    word-wrap: normal;
+}
+
+progress {
+    vertical-align: baseline;
+}
+
+output {
+    display: inline-block;
+}
+
+summary {
+    display: list-item;
+    cursor: pointer;
+}
+
+template {
+    display: none;
+}
+.mb-4{
+    position: absolute;
+    display: block;
+    content: "";
+    background: no-repeat 50%;
+    border-radius: 5px;
+}
+.end-munero {
+    width: 10%;
+}
+.btn-confirma, .btn-clean, .btn-voltar {
+    background-color: #fa2d2d;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: #fa2d2d;
+    border-radius: 5px;
+}
+
+.btn-form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    background-color: #fa2d2d;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Float columns side by side */
+  .column {
+    float: left;
+    width: 33%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .btn {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .btn:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

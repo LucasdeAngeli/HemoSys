@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../projeto/layoutcadastro.css">
+    <title>Cadastro | HemoSys</title>
+</head>
+
+<body>
+    <!--Importando Script Jquery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!--Formulário-->
+    <form class="form-cadastro" novalidate>
+        <div class="row">
+            <!--Dados Principais-->
+            <fieldset>
+                <legend>Dados Principais:</legend>
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" autofocus required>
+                </div>
+                <div class="mb-3">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="seuemail@endereco.com">
+                </div>
+                <div class="mb-3">
+                    <label for="Nascimento">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="Nascimento" placeholder="01/01/1990" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sangue">Tipo Sanguíneo</label>
+                    <select class="tipo-sangue" id="sangue" required>
+                        <option value>--</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select>
+                </div>
+            </fieldset>
+            <!--Sexo-->
+            <fieldset>
+                <legend>Sexo:</legend>
+                <div class="select-sexo">
+                    <div class="opcao-sexo">
+                        <input id="sexo" name="tipo-sexo" type="radio" class="tipo-sexo">
+                        <label class="tipo-sexo" for="sexo">Masculino</label>
+                    </div>
+                    <div class="opcao-sexo">
+                        <input id="sexo" name="tipo-sexo" type="radio" class="tipo-sexo">
+                        <label class="tipo-sexo" for="sexo">Feminino</label>
+                    </div>
+                    <div class="opcao-sexo">
+                        <input id="sexo" name="tipo-sexo" type="radio" class="tipo-sexo">
+                        <label class="tipo-sexo" for="sexo">Não Definido</label>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Endereço-->
+            <fieldset>
+                <legend>Endereço:</legend>
+                <div class="local">
+                    <label for="cep">CEP</label>
+                    <input type="number" class="form-control" maxlength="8" id="cep" placeholder="00000-000" required>
+                </div>
+                <div class="endereco">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" class="form-control" id="logradouro" placeholder="Rua ABC" required>
+                </div>
+                <div class="end-numero">
+                    <label for="endereco">Numero</label>
+                    <input type="number" class="form-control" id="endereco" placeholder="123" required>
+                </div>
+                <div class="local">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" required>
+                </div>
+                <div class="local">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" required>
+                </div>
+                <div class="row">
+                    <div class="local">
+                        <label for="cidade">Cidade</label>
+                        <select class="selecionar cidade" id="cidade" required>
+                            <option value>Cidade</option>
+                            <option>Afonso Claudio</option>
+                            <option>Água Doce do Norte</option>
+                            <option>Água Branca</option>
+                            <option>Alegre</option>
+                            <option>Alfredo Chaves</option>
+                            <option>Alto Rio Novo</option>
+                            <option>Achieta</option>
+                            <option>Apiacá</option>
+                            <option>Aracruz</option>
+                            <option>Atílio Vivácqua</option>
+                            <option>Baixo Guandu</option>
+                            <option>Barra de São Francisco</option>
+                            <option>Boa Esperança</option>
+                            <option>Bom Jeseus do Norte</option>
+                            <option>Brejetuba</option>
+                            <option>Cachoeiro de Itapemirim</option>
+                            <option>Cariacica</option>
+                            <option>Castelo</option>
+                            <option>Colatina</option>
+                            <option>Conceição da Barra</option>
+                            <option>Conceição do Castelo</option>
+                            <option>Divino São Lourenço</option>
+                            <option>Domingos Martins</option>
+                            <option>Dores do Rio Preto</option>
+                            <option>Ecoporanga</option>
+                            <option>Fundão</option>
+                            <option>Governador Lindenberg</option>
+                            <option>Guaçuí</option>
+                            <option>Guarapari</option>
+                            <option>Ibatiba</option>
+                            <option>Ibiraçu</option>
+                            <option>Ibitirama</option>
+                            <option>Iconha</option>
+                            <option>Irupi</option>
+                            <option>Itaguaçu</option>
+                            <option>Itapemirim</option>
+                            <option>Itarana</option>
+                            <option>Iúna</option>
+                            <option>Jaguaré</option>
+                            <option>Jorônimo Monteiro</option>
+                            <option>João Neiva</option>
+                            <option>Laranja da Terra</option>
+                            <option>Linhares</option>
+                            <option>Mantenópolis</option>
+                            <option>Marataízes</option>
+                            <option>Marechal Floriano</option>
+                            <option>Marilândia</option>
+                            <option>Mimoso do Sul</option>
+                            <option>Montanha</option>
+                            <option>Mucuruci</option>
+                            <option>Muniz Freire</option>
+                            <option>Muqui</option>
+                            <option>Nova Venécia</option>
+                            <option>Pancas</option>
+                            <option>Pedro Canário</option>
+                            <option>Pinheiros</option>
+                            <option>Piúma</option>
+                            <option>Ponto Belo</option>
+                            <option>Presidente Kennedy</option>
+                            <option>Rio Bananal</option>
+                            <option>Rio Novo do Sul</option>
+                            <option>Santa Leopoldina</option>
+                            <option>Santa Maria de Jetibá</option>
+                            <option>Santa Tereza</option>
+                            <option>São Domingos do Norte</option>
+                            <option>São Gabriel da Palha</option>
+                            <option>São José do Calçado</option>
+                            <option>São Matheus</option>
+                            <option>São Roque do Canaã</option>
+                            <option>Serra</option>
+                            <option>Sooretama</option>
+                            <option>Vargem Alta</option>
+                            <option>Venda Nova do Imigrante</option>
+                            <option>Viana</option>
+                            <option>Vila Pavão</option>
+                            <option>Vila Valério</option>
+                            <option>Vila Velha</option>
+                            <option>Vitória</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <hr class="mb-4">
+            <br>
+            <hr>
+            <!--Aviso sobre doação-->
+            <h4>IMPORTANTE</h4>
+            <div style="overflow:scroll; width:600px; height:200px;">
+                <P>O que você precisa saber para doar sangue</P>
+                <P>Seja um doador</P>
+                <P>Doar sangue é ter a possibilidade de compartilhar o que temos de mais valioso. Por isso, estendemos o
+                    braço a você, doador, com um gesto de agradecimento, um pedido de retorno e da mesma forma um
+                    convite àqueles que ainda não doaram. A sua contribuição é fundamental. Com uma doação você pode
+                    salvar até quatro vidas.
+                    Mas é necessário respeitar o intervalo: homens podem doar a cada 60 dias, não ultrapassando quatro
+                    doações nos últimos 12 meses e mulheres podem doar a cada 90 dias, não ultrapassando três doações
+                    nos últimos 12 meses.</P>
+
+                <P>A doação</P>
+                <P>- Identificação: apresentar documento de identidade oficial com foto, válido em todo território
+                    nacional.</P>
+                <P>- Triagem hematológica é aferição dos sinais vitais: será feita a dosagem de hemoglobina e avaliação
+                    de peso, pressão arterial, temperatura e etc.</P>
+                <P>- Triagem clínica: será feita entrevista sobre o seu estado de saúde e suas condições gerais. É
+                    fundamental sua sinceridade ao responder as perguntas.</P>
+                <P>- Coleta de sangue: a duração da coleta é de 5 a 15 minutos e são coletados em média de 400 a 450 ml
+                    de sangue, além de amostras para exames laboratoriais.</P>
+                <P>Após a doação, o doador deve permanecer, no mínimo, durante 15 minutos para ser observada se há
+                    reação adversa imediata após a doação de sangue. Neste momento, será servido o lanche para iniciar a
+                    reposição de perdas ocorridas durante a doação.</P>
+                <P>Algumas doenças podem ser transmitidas pelo sangue, como: Doença de Chagas, Aids, Hepatites B e C,
+                    HTLV e Sífilis. Esta é uma das razões pelas quais se realiza a triagem clínica dos candidatos e os
+                    exames sorológicos no sangue doado.</P>
+                <br>
+                <P>Após a doação</P>
+                <P>- Ingerir bastante líquido.</P>
+                <P>- Aguardar, pelo menos, uma hora antes de consumir cigarros, charutos ou cachimbos.</P>
+                <P>- Aguardar aproximadamente 12 horas antes de realizar qualquer esforço físico, especialmente com o
+                    membro relacionado à doação.</P>
+                <P>- Interromper, no mínimo, por 12 horas após a doação a pilotagem ou condução de veículo de grande
+                    porte, operação de máquinas ou equipamentos industriais ou de construção civil e prática de
+                    mergulho, voo livre ou escalada.
+                    <P>- Manter a compressão no local da punção em caso de sangramento ou hematomas.</P>
+                    <P>- No caso de mal estar, parar imediatamente o veículo se estiver dirigindo.</P>
+                    <P>- Em caso de tonteira, vista escura, enjoo, palidez ou suor excessivo deitar-se ou sentar-se
+                        imediata-mente, permanecendo nesta posição até melhorar.</P>
+                    <P>- Comunicar ao serviço de hemoterapia caso apresente febre ou diarreia até sete dias após a
+                        doação.</P>
+                    <br>
+                    <P>Sintomas pós-doação - Apesar de serem muito incomuns, podem ocorrer:</P>
+                    <P>fraqueza, dor de cabeça, tontura, queda de pressão, sudorese, náuseas, vômitos, dor ou hematoma
+                        no local da punção, desmaios ou convulsões.
+                        Caso apareça algum dos sintomas, comunique imediatamente ao profissional do Hemocentro, que ele
+                        prontamente o atenderá.</P>
+                    <br>
+                    <P>O que acontece com o sangue doado?</P>
+                    <P>As amostras são submetidas a exames para identificação de doenças como: Doença de Chagas,
+                        Hepatites B e C, Sífilis, HTLV e HIV. O sangue doado é separado em diferentes componentes (como
+                        hemácia, plaqueta, plasma e outros) e assim pode beneficiar mais de um paciente.
+                        Os pacientes que vão receber esses componentes do sangue são aqueles que vão fazer grandes
+                        cirurgias e/ou tratamento de doenças como câncer, doenças crônicas como anemia falciforme e
+                        talassemia, ou aqueles que estão em tratamento e precisam de transfusão de sangue.
+                        Janela Imunológica: É o período entre a contaminação da pessoa por um determinado agente
+                        infeccioso (HIV, Hepatite, Sífilis e etc.) e a sua detecção nos exames laboratoriais. Nesse
+                        período os resultados dos exames são negativos, mas mesmo assim o sangue doado é capaz de
+                        transmitir o agente infeccioso.
+                        <bold>Portanto, é fundamental sua sinceridade ao responder as perguntas.</bold>
+                        Atenção: se você quiser apenas fazer exame para Aids, Hepatite, Sífilis procure um centro de
+                        testagem anônima e gratuita. </P>
+                    <P>Endereço: www.saude.es.gov.br</P>
+                    <br>
+                    <P>Requisitos para doar:</P>
+                    <P>- Apresentar documento de identidade oficial com foto, válido em todo território Nacional
+                        (Carteira de identidade, de trabalho, habilitação, passaporte).</P>
+                    <P>- Estar se sentindo bem </P>
+                    <P>- Ter idade mínima de 16 anos (16 e 17 anos mediante consentimento formal do responsável legal)
+                    </P>
+                    <P>- Ter idade máxima de 70 anos incompletos (desde que a primeira doação tenha ocorrido antes dos
+                        61 anos)</P>
+                    <P>- Pesar acima de 50 kg </P>
+                    <P>- Ter dormido bem na noite anterior à doação. </P>
+                    <P>- Não estar em jejum.</P>
+                    <P>- Fazer repouso mínimo de 6 horas na noite anterior à doação.</P>
+                    <P>- Não ingerir bebida alcóolica nas 12 horas antes da doação.</P>
+                    <P>- Evitar fumar, pelo menos 2 horas antes e depois da doação.</P>
+                    <P>- Evitar ingerir alimentos gordurosos.</P>
+                    <P>- Caso tenha almoçado, a doação deve ocorrer 3 horas após.</P>
+                    <br>
+                    <P>Impedimentos temporários</P>
+                    <P>Resfriado: aguardar sete dias após o desaparecimento dos sintomas.</P>
+                    <P>- Gravidez.</P>
+                    <P>- 90 dias após o parto normal e 180 dias após cesariana.</P>
+                    <P>- Amamentação (se o parto ocorreu há menos de 12 meses).</P>
+                    <P>- Ingestão de bebida alcoólica nas 12 horas que antecedem a doação.</P>
+                    <P>- Tatuagem nos últimos 12 meses.</P>
+                    <P>- Situações nas quais há maior risco de adquirir doenças sexualmente transmissíveis (aguardar 12
+                        meses).</P>
+                    <br>
+                    <P>Impedimentos definitivos</P>
+                    <P>- Hepatite após os 11 anos de idade.</P>
+                    <P>- Evidência clínica ou laboratorial das seguintes doenças sexualmente transmissíveis pelo sangue:
+                        Hepatites B e C, Aids (vírus HIV), doenças associadas aos vírus HTLV I e II e Doença de Chagas.
+                    </P>
+                    <P>- Uso de drogas injetáveis ilícitas.</P>
+                    <P>- Malária.</P>
+                    <P>- Outros impedimentos poderão ser identificados durante a entrevista de triagem, no dia da
+                        doação.
+                        <P>- Outros impedimentos poderão ser identificados durante a entrevista de triagem, no dia da
+                            doação.</P>
+            </div>
+            <div class="check">
+                <input type="checkbox" class="check" id="check" required>
+                <label class="check-label" for="check">
+                    "Declaro que confirmo todos os dados preenchidos acima, li os termos, estou ciente e apto"
+                </label>
+            </div>
+        </div>
+        <hr class="mb-4">
+        <br>
+        <!--Botões de Contorle do Formulário-->
+        <div class="row">
+            <div class="btn">
+                <div class="btn-form">
+                    <button type="submit">Continuar</button>
+                </div>
+            </div>
+
+            <div class="btn">
+                <div class="btn-form">
+                    <button type="reset">Limpar</button>
+                </div>
+            </div>
+
+            <div class="btn">
+                <div class="btn-form">
+                    <button type="link" onclick="alert('Deseja retornar?')">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--Script Busca CEP-->
+    <script type="text/javascript">
+        $("#cep").focusout(function () {
+            //Início do Comando AJAX
+            $.ajax({
+                //O campo URL diz o caminho de onde virá os dados
+                //É importante concatenar o valor digitado no CEP
+                url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+                //Aqui você deve preencher o tipo de dados que será lido,
+                //no caso, estamos lendo JSON.
+                dataType: 'json',
+                //SUCESS é referente a função que será executada caso
+                //ele consiga ler a fonte de dados com sucesso.
+                //O parâmetro dentro da função se refere ao nome da variável
+                //que você vai dar para ler esse objeto.
+                success: function (resposta) {
+                    //Agora basta definir os valores que você deseja preencher
+                    //automaticamente nos campos acima.
+                    $("#logradouro").val(resposta.logradouro);
+                    $("#complemento").val(resposta.complemento);
+                    $("#bairro").val(resposta.bairro);
+                    $("#cidade").val(resposta.localidade);
+                    //Vamos incluir para que o Número seja focado automaticamente
+                    //melhorando a experiência do usuário
+                    $("#numero").focus();
+                }
+            });
+        });
+    </script>
+</body>

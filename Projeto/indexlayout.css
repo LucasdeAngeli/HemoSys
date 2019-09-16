@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    border-top: 0;
+    border-left: 0px;
+    border-right: none;
+}
+
+.navbar {
+    width: 100%;
+    border-radius: 10px;
+    overflow: auto;
+    position: absolute;
+    margin: 10px;
+}
+
+.navbar a {
+  float: right;
+  padding: 15px;
+  color: red;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50px;
+}
+
+.navbar a:hover {
+  background-color: red;
+  color: white;
+}
+
+.active {
+  color: white;
+  font-style: italic;
+}
+
+@media screen and (max-width: 750px) {
+  .navbar a, .column, .row {
+    float: none;
+    display: block;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Float columns side by side */
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 22px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+h1 {
+  text-align: center;
+  background: #ed6d6d;
+  color: white;
+  font-style: italic;
+}
+
+p{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  color: rgb(92, 92, 92);
+}
+
+.imgblood, .navbar {
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+
+.imgblood:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.column-req {
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+}
