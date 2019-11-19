@@ -4,6 +4,8 @@ body {
     border-top: 0;
     border-left: 0px;
     border-right: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
@@ -41,6 +43,7 @@ body {
 }
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* Float columns side by side */

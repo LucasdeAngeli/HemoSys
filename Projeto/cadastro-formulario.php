@@ -1,0 +1,518 @@
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /*Inicio-Infromativo extra sobre o tipo de doação*/
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -60px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /*Fim-Infromativo extra sobre o tipo de doação*/
+
+    /*Inicio-Custom Radio Button*/
+
+    /* Customize the label (the container) */
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input~.checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container input:checked~.checkmark {
+      background-color: #2196F3;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked~.checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    /*Fim-Custom Radio Button*/
+
+    .input-container {
+      display: -ms-flexbox;
+      /* IE10 */
+      display: flex;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .icon {
+      padding: 10px;
+      background: dodgerblue;
+      color: white;
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      outline: none;
+    }
+
+    .input-field:focus {
+      border: 2px solid dodgerblue;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+      background-color: rgb(216, 7, 7);
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .btn:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Importando Script Jquery-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <form method="POST" action="salvacadastro.php" style="max-width:500px;margin:auto">
+    <h2>Cadastro do Doador</h2>
+    <br>
+    <h4>Dados Pessoais</h4>
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="input-field" type="text" placeholder="Nome" name="nome">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-id-card-o icon"></i>
+      <input class="input-field" type="number" placeholder="CPF" name="cpf">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-envelope icon"></i>
+      <input class="input-field" type="text" placeholder="Email" name="email">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-phone-square icon"></i>
+      <input class="input-field" type="phone" placeholder="Telefone" name="teleofne">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-birthday-cake icon"></i>
+      <input class="input-field" type="date" placeholder="Nascimento" name="dt_nascimento">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-compass icon"></i>
+      <input class="input-field" type="text" placeholder="Naturalidade" name="naturalidade">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-tint icon"></i>
+      <select class="input-field" id="sangue" name="tipo_sangue" required>
+        <option value>Tipo de Sangue</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+        <option>O+</option>
+        <option>O-</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-venus-mars icon"></i>
+      <label class="container" name="sexo">Maculino
+          <input type="radio" checked="checked" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Femenino
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Não Definido
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-genderless icon"></i>
+      <select class="input-field" id="sangue" name="estado_civil" required>
+        <option value>Estado Civil</option>
+        <option>Solteiro(a)</option>
+        <option>Casado(a)</option>
+        <option>Divociado(a)</option>
+        <option>Viuvo(a)</option>
+      </select>
+    </div>
+
+    <hr>
+    <h4>Documento</h4>
+    <div class="input-container">
+      <i class="fa fa-id-badge icon"></i>
+      <select class="input-field" id="sangue" name="documento "required>
+        <option value>Documento</option>
+        <option>CNH</option>
+        <option>Identidade</option>
+        <option>Título de Eleitor</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-id-card-o icon"></i>
+      <input class="input-field" type="number" placeholder="Número do Documento" name="num_documento">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-university icon"></i>
+      <input class="input-field" type="text" placeholder="Orgão Expedidor" name="orgao_doc">
+    </div>
+
+    <hr>
+    <h4>Escolaridade</h4>
+    <div class="input-container">
+      <i class="fa fa-graduation-cap icon"></i>
+      <select class="input-field" id="document" name="escolaridade" required>
+        <option value>Escolaridade</option>
+        <option>Ensino Médio-Cursando</option>
+        <option>Ensino Médio-Completo</option>
+        <option>Ensino Superior-Cursando</option>
+        <option>Ensino Superior-Completo</option>
+        <option>Pós Graduação</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-briefcase icon"></i>
+      <input class="input-field" type="text" placeholder="Profissão" name="profissao">
+    </div>
+
+    <hr>
+    <h4>Endereço</h4>
+    <div class="input-container">
+      <i class="fa fa-map-marker icon"></i>
+      <input type="number" class="input-field" maxlength="8" id="cep" name="cep" placeholder="CEP" required>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-road icon"></i>
+      <input type="text" class="input-field" id="logradouro" name="logradouro" placeholder="Rua..." required>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-sort-numeric-asc icon"></i>
+      <input type="number" class="input-field" id="endereco" name="numero" placeholder="Número Residencial" required>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-map-signs icon"></i>
+      <input type="text" class="input-field" id="complemento" name="complemento" placeholder="Complemento">
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-map-marker icon"></i>
+      <input type="text" class="input-field" id="bairro" name="bairro" placeholder="Bairro" required>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-building icon"></i>
+      <select class="input-field" id="cidade" name="cidade" placeholder="Cidade" required>
+        <option value>Cidade</option>
+        <option>Afonso Claudio</option>
+        <option>Água Doce do Norte</option>
+        <option>Água Branca</option>
+        <option>Alegre</option>
+        <option>Alfredo Chaves</option>
+        <option>Alto Rio Novo</option>
+        <option>Achieta</option>
+        <option>Apiacá</option>
+        <option>Aracruz</option>
+        <option>Atílio Vivácqua</option>
+        <option>Baixo Guandu</option>
+        <option>Barra de São Francisco</option>
+        <option>Boa Esperança</option>
+        <option>Bom Jeseus do Norte</option>
+        <option>Brejetuba</option>
+        <option>Cachoeiro de Itapemirim</option>
+        <option>Cariacica</option>
+        <option>Castelo</option>
+        <option>Colatina</option>
+        <option>Conceição da Barra</option>
+        <option>Conceição do Castelo</option>
+        <option>Divino São Lourenço</option>
+        <option>Domingos Martins</option>
+        <option>Dores do Rio Preto</option>
+        <option>Ecoporanga</option>
+        <option>Fundão</option>
+        <option>Governador Lindenberg</option>
+        <option>Guaçuí</option>
+        <option>Guarapari</option>
+        <option>Ibatiba</option>
+        <option>Ibiraçu</option>
+        <option>Ibitirama</option>
+        <option>Iconha</option>
+        <option>Irupi</option>
+        <option>Itaguaçu</option>
+        <option>Itapemirim</option>
+        <option>Itarana</option>
+        <option>Iúna</option>
+        <option>Jaguaré</option>
+        <option>Jorônimo Monteiro</option>
+        <option>João Neiva</option>
+        <option>Laranja da Terra</option>
+        <option>Linhares</option>
+        <option>Mantenópolis</option>
+        <option>Marataízes</option>
+        <option>Marechal Floriano</option>
+        <option>Marilândia</option>
+        <option>Mimoso do Sul</option>
+        <option>Montanha</option>
+        <option>Mucuruci</option>
+        <option>Muniz Freire</option>
+        <option>Muqui</option>
+        <option>Nova Venécia</option>
+        <option>Pancas</option>
+        <option>Pedro Canário</option>
+        <option>Pinheiros</option>
+        <option>Piúma</option>
+        <option>Ponto Belo</option>
+        <option>Presidente Kennedy</option>
+        <option>Rio Bananal</option>
+        <option>Rio Novo do Sul</option>
+        <option>Santa Leopoldina</option>
+        <option>Santa Maria de Jetibá</option>
+        <option>Santa Tereza</option>
+        <option>São Domingos do Norte</option>
+        <option>São Gabriel da Palha</option>
+        <option>São José do Calçado</option>
+        <option>São Matheus</option>
+        <option>São Roque do Canaã</option>
+        <option>Serra</option>
+        <option>Sooretama</option>
+        <option>Vargem Alta</option>
+        <option>Venda Nova do Imigrante</option>
+        <option>Viana</option>
+        <option>Vila Pavão</option>
+        <option>Vila Valério</option>
+        <option>Vila Velha</option>
+        <option>Vitória</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-globe icon"></i>
+      <select class="input-field" name="uf" id="uf">
+        <option value=>Estado</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+      </select>
+    </div>
+
+    <hr>
+    <h4>Dados da Doação</h4>
+    <div class="input-container" class="tooltip">
+      <i class="fa fa-heartbeat icon"></i>
+      <select class="input-field" id="document" name="tipo_doacao" required>
+        <option value>Tipo de Doação</option>
+        <option>Espontânea</option>
+        <option>Convocada</option>
+        <option>Reposição</option>
+        <option>Autóloga</option>
+      </select>
+      <!--
+      <span class="tooltiptext">Espontanea: Quando o doador doa por vontade própria;
+        Convocada: Qunado o doador é convodado por alguma pessoa ou empresa;
+        Reposição: Quando o doador decide repor o banco de sangue;
+        Autóloga: Não sei.
+      </span>
+      -->
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-compass icon"></i>
+      <select class="input-field" id="document" name="local_doacao" required>
+        <option value>Local de Doação</option>
+        <option>Colatina</option>
+        <option>Linhares</option>
+        <option>São Mateus</option>
+        <option>Serra</option>
+        <option>Vitória</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <i class="fa fa-calendar icon"></i>
+      <input class="input-field" type="date" name="data_doacao" placeholder="Data Prevista da Coleta" name="dt_clt">
+    </div>
+
+    <button type="submit" value="Enviar" class="btn">Registrar</button>
+    <br>
+    <button type="reset" class="btn">Limpar</button>
+  </form>
+
+  <!--Script Busca CEP-->
+  <script type="text/javascript">
+    $("#cep").focusout(function () {
+      //Início do Comando AJAX
+      $.ajax({
+        //O campo URL diz o caminho de onde virá os dados
+        //É importante concatenar o valor digitado no CEP
+        url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+        //Aqui você deve preencher o tipo de dados que será lido,
+        //no caso, estamos lendo JSON.
+        dataType: 'json',
+        //SUCESS é referente a função que será executada caso
+        //ele consiga ler a fonte de dados com sucesso.
+        //O parâmetro dentro da função se refere ao nome da variável
+        //que você vai dar para ler esse objeto.
+        success: function (resposta) {
+          //Agora basta definir os valores que você deseja preencher
+          //automaticamente nos campos acima.
+          $("#logradouro").val(resposta.logradouro);
+          $("#complemento").val(resposta.complemento);
+          $("#bairro").val(resposta.bairro);
+          $("#cidade").val(resposta.localidade);
+          $("#uf").val(resposta.uf);
+          //Vamos incluir para que o Número seja focado automaticamente
+          //melhorando a experiência do usuário
+          $("#numero").focus();
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

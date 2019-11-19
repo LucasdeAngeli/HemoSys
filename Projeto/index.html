@@ -4,6 +4,7 @@
 <head>
     <title>HemoSys</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../projeto/indexlayout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,9 +16,11 @@
         <a href="../projeto/login.html"><i class="fa fa-fw fa-user"></i> Entrar/Cadastrar</a>
         <a href="#locais"><i class="fa fa-map"></i> Locais</a>
         <a href="#sobre"><i class="fa fa-info-circle"></i> Sobre</a>
+        <a href="#sobre"><i class="fa fa-tint"></i> Níveis</a>
         <a href="#pqdoar"><i class="fa fa-heartbeat"></i> Por que Doar</a>
         <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Início</a>
     </div>
+    
     <img src="../projeto/fundo.jpg" alt="fundo com bolsa de sangue" width="100%">
     <h1 href="#pqdoar">Por que Doar?</h1>
     <div class="row">
@@ -66,6 +69,76 @@
         </div>
     </div>
 
+    <!--Níveis-->
+    <h1 href="#sobre">Nível de Sangue</h1>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../Bolsas/A+.png" width="150px">
+                <br>
+                <p>Nível: 10%</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../Bolsas/A-.png" width="150px">
+                <br>
+                <p>Nível: 10%</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../Bolsas/B+.png" width="150px">
+                <br>
+                <p>Nível: 10%</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../Bolsas/B-.png" width="150px">
+                <br>
+                <p>Nível: 10%</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../Bolsas/AB+.png" width="150px">
+                <br>
+                <p>Nível: 10%</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../Bolsas/AB-.png" width="150px">
+                <br>
+                <p>Nível: 10%</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../Bolsas/O+.png" width="150px">
+                <br>
+                <p>Nível: 10%</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../Bolsas/O-.png" width="150px">
+                <br>
+                <p>Nível: 10%</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Requisitos-->
     <h1 href="#sobre">Requisitos para Doar</h1>
     <div class="row">
         <div class="column">
@@ -85,7 +158,7 @@
         <div class="column">
             <div class="card">
                 <img class="imgblood" src="../projeto/icons/idade.png" width="150px">
-                <p>Idade mínima de 16 anos (com consentimento)<br>Idade máxima de 70 anos incompletos</p>
+                <p>Idade mínima de 16 anos (com consentimento)</p>
 
             </div>
         </div>
@@ -145,8 +218,16 @@
                 <p>Caso tenha almoçado, a doação deve ocorrer 3 horas após</p>
             </div>
         </div>
+
+        <div class="column">
+            <div class="card">
+                <img class="imgblood" src="../projeto/icons/idade70.png" width="150px">
+                <p>Pessoas acima de 60 anos só doam se já doaram</p>
+            </div>
+        </div>
     </div>
 
+    <!--Locais-->
     <h1>Locais de Doação</h1>
     <div class="row">
         <div class="column">
@@ -186,5 +267,13 @@
         </div>
     </div>
 </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.3.0/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.3.0/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
 </html>

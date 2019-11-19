@@ -8,30 +8,30 @@ form {
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-    text-size-adjust: 100%;
+    text-size-adjust: 80%;
     border-radius:5px;
     position: relative;
 }
 .select-sexo{
-    display: inline-block;
+    display: inline-flex;
+    align-content: center;
 }
 .form-control {
     display: block;
     width: 100%;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: 5px;
+    border-radius: 3px;
     position: relative;
 }
 .form-cadastro {
-    width: 600px;
+    width: 700px;
     display: block;
     display: flex;
       flex-direction: column;
-      margin: 0px;
+      margin: 5px;
       padding: 16px;
-      background-color: rgb(97, 97, 97);
-      border-radius: 5px;
+      border-radius: 3px;
       background-clip: border-box;
       margin-bottom: 15px;
       opacity: 1.0;
@@ -41,11 +41,10 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: rgb(255, 255, 255);
+    color: black;
     text-align: left;
-    background-color: rgb(83, 83, 83);
-    text-align: left;
-    position: relative;
+    background-color: white;
+    position: absolute;
 }
 .row {
     border-radius: 5px;
@@ -58,6 +57,7 @@ hr {
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     align-content: center;
+    text-align: center;
 }
 p {
     margin-top: 0;
@@ -110,14 +110,14 @@ template {
     display: block;
     content: "";
     background: no-repeat 50%;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 .end-munero {
     width: 10%;
 }
 .btn-confirma, .btn-clean, .btn-voltar {
     background-color: #fa2d2d;
-    color: white;
+    color: black;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
@@ -129,7 +129,6 @@ template {
 }
 
 .btn-form {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 15px;
     text-align: center;
     background-color: #fa2d2d;
