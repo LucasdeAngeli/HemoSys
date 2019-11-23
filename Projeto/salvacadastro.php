@@ -29,5 +29,5 @@
     $result_msg_cadastro = "INSERT INTO cadastro_usuario(nome, cpf, email, telefone, dt_nasicmento, naturalidade, tipo_sangue, sexo, estado_civil, documento, num_documento, orgao_doc, escolaridade, profissao, cep, logradouro, numero, complemento, bairro, cidade, uf, tipo_doacao, local_doacao, data_doacao) 
     VALUES ('$nome', '$cpf', '$email', '$telefone', '$dt_nascimento', '$naturalidade', '$tipo_sangue', '$sexo', '$estado_civil', '$documento', '$num_documento', '$orgao_doc', '$escolaridade', '$profissao', '$cep', '$logradouro', '$numero', '$complemento', '$bairro', '$cidade', '$uf', '$tipo_doacao', '$local_doacao', $data_doacao' NOW())";
 
-    $resultado_msg_cadastro = mysqli_query($conn, $msg_cadastro);
+    $resultado_msg_cadastro = mysqli_query($conn, $resultado_msg_cadastro);
 ?>
